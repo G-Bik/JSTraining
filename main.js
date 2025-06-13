@@ -44,4 +44,50 @@ document.addEventListener("DOMContentLoaded", () => {
   clickBug.addEventListener("click", () => {
     console.log("HEY RIGHT HERE, YOU GOT DEBUGG HAHA LOL!");
   });
+
+  let userName = prompt("Masukkan nama kamu: ", "Nama Kamu");
+  if (userName) {
+    // ${userName} adalah template literal yang digunakan untuk menyisipkan variabel ke dalam string, mengapa tidak menggunakan tanda + karena template literal lebih mudah dibaca, ditulis dengan backtick (`) dan memungkinkan penulisan string multi-baris, serta lebih modern
+    console.log(`Halo, ${userName}! Selamat datang!`);
+  } else {
+    console.log("Halo, pengunjung tanpa nama!");
+  }
+
+  // Contoh penggunaan template literal multi-baris pada string
+  let age = 27;
+  let nama = "Gustut Biksa";
+  let gaAdaNilai;
+  let ProgrammerWorks = null; // 1 untuk belum bekerja, 2 untuk sudah bekerja
+
+  if (ProgrammerWorks === null) {
+    ProgrammerWorks = "Kamu belum bekerja sebagai programmer!";
+  } else {
+    ProgrammerWorks = "YAYY!! sudah bekerja sebagai programmer!";
+  }
+
+  let saldoAwal = 50000;
+  let saldoTamabahan = 80000;
+
+  // Menggunakan switch case hampir sama dengan if, tapi lebih mudah dibaca dan ditulis, serta lebih efisien untuk banyak kondisi
+  // switch (ProgrammerWorks) {
+  //   case "belum bekerja":
+  //     ProgrammerWorks = "Kamu belum bekerja sebagai programmer!";
+  //     break;
+  //   case "bekerja":
+  //     ProgrammerWorks = "YAYY!! sudah bekerja sebagai programmer!";
+  //     break;
+  //   default:
+  //     ProgrammerWorks = "Tidak diketahui status pekerjaanmu!";
+  //     break;
+  // }
+
+  alert(`nama saya adalah ${nama} dan umur saya adalah ${age} tahun.
+    dan ini contoh deteksi ${gaAdaNilai} karena variabel tidak mendapatkan nilai atau tidak dideklarasikan nilainya, dan ${ProgrammerWorks}`);
+  // gaAdaNilai tidak dideklarasikan, akan menyebabkan error di console serta pesan undefined pada alert
+
+  // tapi jika kita ingin mendeklarasikan nilainya maka cukup seperti dibawah ini, yang mana tanpa perlu mendeklarasikan ulang variabel gaAdaNilai dengan let, const, atau var.
+  gaAdaNilai = "sekarang ada nilai";
+  alert(
+    `Sekarang variabel gaAdaNilai sudah dideklarasikan nilainya yaitu ${gaAdaNilai}`
+  );
 });
