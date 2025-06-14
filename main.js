@@ -147,4 +147,30 @@ document.addEventListener("DOMContentLoaded", () => {
   namaOrang.shift();
 
   alert(namaOrang);
+
+  // Contoh loop for
+  // .length berungsi menampilkan jumlah data dalam array
+  console.log(namaOrang.length);
+  // dalam melakukan loop array, kita harus ingat pada inisialisasi variabel i yang dimulai dari 0, karena array dimulai dari index 0, dan kondisi i harus kurang dari panjang array (.length) agar sesuai dengan jumlah data array yang ada dan tanpa operator = karena dapat menyebabkan undefined atau error, dan i++ untuk menambah nilai i setiap kali loop dilakukan.
+  for (let i = 0; i < namaOrang.length; i++) {
+    console.log(`kimochiii ${namaOrang.length} kalii`);
+    console.log(i);
+    console.log(namaOrang[i]);
+  }
+
+  //loop do-while
+
+  // Contoh menggunakan while loop yang mana akan melihat kondisi terlebih dahulu dan barulah melakukan perulangan.
+  let i = 0;
+  while (i < namaOrang.length) {
+    i++;
+    console.log(`Gustut Biksa`);
+  }
+
+  // Contoh menggunakan do-while loop yang mana akan melakukan perulangan terlebih dahulu dan baru melihat kondisi.
+  do {
+    i++;
+    console.log(`hey kita melakukan do-while loop`);
+  } while (i < namaOrang.length);
+  // Contoh penggunaan while loop
 });
