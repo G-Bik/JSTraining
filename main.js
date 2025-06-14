@@ -45,6 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("HEY RIGHT HERE, YOU GOT DEBUGG HAHA LOL!");
   });
 
+  // Contoh penggunaan prompt untuk meminta input dari pengguna
+  // yang mana prompt akan menampilkan dialog input dengan teks yang diberikan, dan mengembalikan nilai yang dimasukkan oleh pengguna.
   let userName = prompt("Masukkan nama kamu: ", "Nama Kamu");
   if (userName) {
     // ${userName} adalah template literal yang digunakan untuk menyisipkan variabel ke dalam string, mengapa tidak menggunakan tanda + karena template literal lebih mudah dibaca, ditulis dengan backtick (`) dan memungkinkan penulisan string multi-baris, serta lebih modern
@@ -64,9 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     ProgrammerWorks = "YAYY!! sudah bekerja sebagai programmer!";
   }
-
-  let saldoAwal = 50000;
-  let saldoTamabahan = 80000;
 
   // Menggunakan switch case hampir sama dengan if, tapi lebih mudah dibaca dan ditulis, serta lebih efisien untuk banyak kondisi
   // switch (ProgrammerWorks) {
@@ -90,4 +89,62 @@ document.addEventListener("DOMContentLoaded", () => {
   alert(
     `Sekarang variabel gaAdaNilai sudah dideklarasikan nilainya yaitu ${gaAdaNilai}`
   );
+
+  // Menggunakan contoh sederhana operator + - * / pada JavaScript
+  // yang mana operator ini digunakan untuk melakukan operasi matematika pada angka, contoh dibawah ini adalah contoh penggunaan operator + untuk menjumlahkan saldo awal dan saldo tambahan dengan menggunakan literal template string
+  // yang mana saldoAwal dan saldoTamabahan adalah variabel yang sudah dideklarasikan sebelumnya
+  // kita juga bisa menggunakan opertaor lain seperti perkalian (*), pembagian (/), dan pengurangan (-) dengan cara yang sama
+  let saldoAwal = 50000;
+  let saldoTamabahan = 80000;
+  const hutang = 30000;
+  const saldoAkhir = saldoAwal + saldoTamabahan - hutang;
+
+  alert(
+    `Saldo awal saya adalah Rp.${saldoAwal} dan saldo tambahan saya adalah Rp.
+    ${saldoTamabahan}, jadi total saldo saya adalah Rp.${saldoAkhir}`
+  );
+
+  // Menggunakan array untuk menyimpan beberapa nilai dalam satu variabel
+  // const fruits = ["apel", "jeruk", "mangga", "pisang"];
+  // alert(`Saya suka buah ${fruits.join(", ")}`);
+
+  // // Menggunakan objek untuk menyimpan data dengan pasangan kunci-nilai
+  // const person = {
+  //   name: "Gustut Biksa",
+  //   age: 27,
+  //   city: "Jakarta",
+  // };
+  // alert(
+  //   `Nama saya adalah ${person.name}, umur saya ${person.age} tahun, dan saya tinggal di ${person.city}.`
+  // );
+
+  // // Contoh penggunaan fungsi untuk mengorganisir kode
+  // function greet(name) {
+  //   return `Halo, ${name}!`;
+  // }
+  // alert(greet("Gustut Biksa"));
+
+  // Contoh penggunaan array untuk menyimpan nama pelanggan
+  let namaPelanggan = ["Tarno", "Smith", "Johnson", "Bobo"];
+  // Menambahkan nama baru ke dalam array tanpa mengubah array yang sudah ada
+  // .push() digunakan untuk menambahkan elemen baru ke akhir array
+  namaPelanggan.push("Gustut Biksa", "Jonathan");
+  // .shift() digunakan untuk menghapus elemen pertama dari array
+  namaPelanggan.shift();
+  // .pop() digunakan untuk menghapus elemen terakhir dari array
+  namaPelanggan.pop();
+  // .join(", ") digunakan untuk menggabungkan elemen-elemen dalam array yang dipilih dalam variabel menjadi satu string, dengan koma sebagai pemisah. kita bisa mengganti koma tersebut dengan karakter lain seperti spasi, garis miring, atau karakter lainnya sesuai kebutuhan.
+  alert(namaPelanggan.join(", ") + " adalah nama pelanggan yang terdaftar.");
+  alert(namaPelanggan[2] + " adalah nama pelanggan yang terdaftar ke-3.");
+
+  // Contoh penggunaan prompt untuk meminta input nama orang
+  let namaOrang = [];
+
+  namaOrang[0] = "Joana";
+  namaOrang[1] = "Bono";
+  namaOrang[2] = "Lukman";
+  // Menghapus nama pertama dari array
+  namaOrang.shift();
+
+  alert(namaOrang);
 });
