@@ -81,9 +81,13 @@ const lastIndex = arrayIdentifikasi.pop(); // Mengambil data terakhir dan mengha
 //   `Data pertama adalah ${firstIndex} dan data terakhir adalah ${lastIndex}`
 // );
 
+// Cara dalam mendeklarasikan objek kedalam array pada Javascript
 const arrayNew = [];
 arrayNew["semangka"] = "🍉";
 arrayNew["Anggur"] = "🍇";
 arrayNew["ApelIjo"] = "🍏";
 
-console.log(arrayNew);
+// console.log(arrayNew);
+
+// Melakukan duplikasi Array dalam pengelolaan Array
+const arrayData = ["🍉", "🍇", "🍓", "🍈", "🍒", "🍑", "🥭"];
