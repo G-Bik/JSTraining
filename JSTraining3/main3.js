@@ -54,7 +54,7 @@ const arrayIdentifikasi = [
 
 // Cara mengidentifikasi apakah sebuah array memiliki data tertentu yang kita inginkan dengan menggunakan method .includes(). Nantinya akan mengembalikan nilai boolean true atau false
 const strawberry = arrayIdentifikasi.includes("🍓");
-console.log(strawberry); // Output: boolean
+// console.log(strawberry); // Output: boolean
 
 // Untuk mengetahui posisi dari data tertentu dalam sebuah array, kita bisa menggunakan method .indexOf(). Nantinya akan mengembalikan nilai berupa index dari data yang kita cari. Jika tidak ditemukan, maka akan mengembalikan nilai -1
 const posisiStrawberry = arrayIdentifikasi.indexOf("🍓");
@@ -62,13 +62,28 @@ const posisiStrawberry = arrayIdentifikasi.indexOf("🍓");
 // menggunakan if steatement hanya dengan parameter tanpa operator logika akan langsung dibantingkan dengan nilai true seperti dibawah ini.
 // if strawberry === true sama saja dengan if (strawberry)
 if (strawberry) {
-  console.log(`Data 🍓 ditemukan dalam array di posisi ${posisiStrawberry}`);
+  //   console.log(`Data 🍓 ditemukan dalam array di posisi ${posisiStrawberry}`);
 } else {
-  console.log("Data 🍓 tidak ditemukan dalam array.");
+  //   console.log("Data 🍓 tidak ditemukan dalam array.");
 }
 
+// Untuk mengetahui data sebelum dan sesudah dari data yang kita cari, kita bisa menggunakan index yang sudah didapatkan sebelumnya
 const indexBefore = posisiStrawberry - 1;
 const indexAfter = posisiStrawberry + 1;
 const before = arrayIdentifikasi[indexBefore];
 const after = arrayIdentifikasi[indexAfter];
-console.log(before, after);
+// console.log(`Sebelum 🍓 ada ${before} dan setelahnya ada ${after}`);
+
+// Cara mengetahui value pertama dan terakhir dari sebuah array dapat dilakukan dengan metode shift() dan pop(). Hal ini berguna untuk mengambil data dari sebuah array yang memiliki banyak value dan multiple jenis data (bukan hanya string saja). Ini akan sangat memudahkan kita untuk mempelajari dan mengidentifikasi array yang lebih kompleks.
+const firstIndex = arrayIdentifikasi.shift(); // Mengambil data pertama dan menghapusnya dari array
+const lastIndex = arrayIdentifikasi.pop(); // Mengambil data terakhir dan menghapusnya dari array
+// console.log(
+//   `Data pertama adalah ${firstIndex} dan data terakhir adalah ${lastIndex}`
+// );
+
+const arrayNew = [];
+arrayNew["semangka"] = "🍉";
+arrayNew["Anggur"] = "🍇";
+arrayNew["ApelIjo"] = "🍏";
+
+console.log(arrayNew);
