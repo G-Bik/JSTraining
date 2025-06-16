@@ -103,17 +103,99 @@ const arrayData = [
   { semangka: "🍉" },
 ];
 
-//Shallow Copy, yaitu pengcopyan array pada tingkat atas atau generalnya saja. Jika terdapat adanya nested (objek, fungsi dll.) dalam data array utama, maka nested tersebut akan ikut terpengaruh oleh perubahan pada array duplikat.
+//Shallow Copy, yaitu pengcopyan array pada tingkat atas atau generalnya saja. Jika terdapat adanya nested (objek, fungsi dll.) dalam data array utama, maka nested tersebut akan ikut terpengaruh oleh perubahan pada array duplikat. ada banyak cara melakukan shallow copy, semua memiliki performancenya masing2, dan sebaiknya tanya AI untuk lebih detail dan jelasnya.
 const copyData1 = [...arrayData]; //salah satu cara copy shallow copy
 copyData1[7][8] = 321;
-console.log(
-  `Shallow Copy Array Utama ${arrayData} dan Array duplikat ${copyData1}`
-);
+// console.log(
+//   `Shallow Copy Array Utama ${arrayData} dan Array duplikat ${copyData1}`
+// );
 
 //Deep Copy, yaitu pengcopyann array keseluruhan tanpa mempengaruhi array utama yang dicopykannya (menduplikat lebih lengkap dibandingkan Shallow Copy)
-
 const copyData2 = JSON.parse(JSON.stringify(arrayData)); // Cara Deep Copy
 copyData2[7][8] = "HAHA HIHI";
-console.log(
-  `Deep Copy Array Utama ${arrayData} dan Array duplikat ${copyData2}`
+// console.log(
+//   `Deep Copy Array Utama ${arrayData} dan Array duplikat ${copyData2}`
+// );
+
+const arrayGUWE = [
+  "🍉",
+  10,
+  { tomato: true },
+  "eat",
+  "🍒",
+  {
+    contohFungsi: function () {
+      console.log("console log berhasil dipanggil");
+    },
+  },
+  "🥭",
+  [30, 4],
+  { semangka: "🍉" },
+];
+
+// Cara pengambilan multidimensi array dalam array serta value objek dalam array (pengambilan sebuah nested pada array)
+console.log(arrayGUWE[7][1]);
+console.log(arrayGUWE[2].tomato);
+// Cara pemanggilan fungsi yang berada dalam array
+console.log(arrayGUWE[5].contohFungsi()); // akan menghasilkan nilai undefined, karena dalam fungsi sudah ada console.log(), bisa pakai cara dibawah sbegai berikut:
+arrayGUWE[5].contohFungsi();
+
+// Merging 2 array
+const array1 = ["🍉", "🍇", "🍓", "🍈", "🍒", "🍑", "🥭", "🍍", "🥥"];
+const array2 = [7, "mwehehehe", "🍒", 6, 3, [30, 4], { semangka: "🍉" }];
+
+// Melakukan pengganbungan atau merge 2 array dengan fungsi .concat()
+const mergerArray = array1.concat(array2);
+console.log(mergerArray);
+
+// Melakukan mapping pada gabungan array, pada parameter for tersebut ada 2 cara melakukan mapping tergantung dari tujuannya. Jika kita ingin melihat value arraynya maka gunakan of, jika ingin melihat index-nya gunakan in, dan jika ingin melihat keduanya gunakan .mapping()
+
+// melihat index array utk di mapping
+for (ulang in mergerArray) {
+  console.log(`melihat index : ${ulang}`);
+}
+
+// melihat value array utk di mappiing
+for (ulang of mergerArray) {
+  console.log(`melihat value : ${ulang}`);
+}
+
+// melihat index dan valuenya utk di mapping
+mergerArray.map((value, index) =>
+  console.log(`melihat value dan index :` + value, index)
 );
+
+const datas = [
+  {
+    nama: "Gustut Biksa",
+    stack: "js react dll",
+    age: 27,
+  },
+  {
+    nama: "Jonson",
+    stack: "js react dll",
+    age: 30,
+  },
+  {
+    nama: "Andri",
+    stack: "js react dll",
+    age: 25,
+  },
+  {
+    nama: "Andri",
+    stack: "js react dll",
+    age: 28,
+  },
+];
+
+// Cara untuk menampilkan beberapa value dari key di objek dalam array
+datas.map((values, index) => {
+  // return values.nama;
+  console.log(values.nama, values.stack);
+});
+
+// Cara melakukan pengurutan pada array, contohnya pada key "age" yang megurutkan valuenya
+// datas.sort((a, b) => b.age - a.age).map((values) => console.log(values));
+
+// Filter data dengan spesifik tertentu
+datas.filter((x) => x.age > 30).map((values) => console.log(values));
