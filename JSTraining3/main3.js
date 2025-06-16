@@ -90,4 +90,30 @@ arrayNew["ApelIjo"] = "🍏";
 // console.log(arrayNew);
 
 // Melakukan duplikasi Array dalam pengelolaan Array
-const arrayData = ["🍉", "🍇", "🍓", "🍈", "🍒", "🍑", "🥭"];
+// terdapat 2 jenis pendupikasian array yaitu shallow copy dan deep copy
+const arrayData = [
+  "🍉",
+  "🍇",
+  "🍓",
+  "🍈",
+  "🍒",
+  "🍑",
+  "🥭",
+  [30, 4],
+  { semangka: "🍉" },
+];
+
+//Shallow Copy, yaitu pengcopyan array pada tingkat atas atau generalnya saja. Jika terdapat adanya nested (objek, fungsi dll.) dalam data array utama, maka nested tersebut akan ikut terpengaruh oleh perubahan pada array duplikat.
+const copyData1 = [...arrayData]; //salah satu cara copy shallow copy
+copyData1[7][8] = 321;
+console.log(
+  `Shallow Copy Array Utama ${arrayData} dan Array duplikat ${copyData1}`
+);
+
+//Deep Copy, yaitu pengcopyann array keseluruhan tanpa mempengaruhi array utama yang dicopykannya (menduplikat lebih lengkap dibandingkan Shallow Copy)
+
+const copyData2 = JSON.parse(JSON.stringify(arrayData)); // Cara Deep Copy
+copyData2[7][8] = "HAHA HIHI";
+console.log(
+  `Deep Copy Array Utama ${arrayData} dan Array duplikat ${copyData2}`
+);
