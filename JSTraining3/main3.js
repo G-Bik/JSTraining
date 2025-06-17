@@ -191,36 +191,20 @@ const datas = [
 // Cara untuk menampilkan beberapa value dari key di objek dalam array
 // property ini menggunakan arrow function
 datas.map((values, index) => {
-  // return values.nama;
-  // console.log(values.nama, values.stack);
-  // console.log(values); // Tampilkan semua
+  return values.nama;
+  console.log(values.nama, values.stack);
+  console.log(values); // Tampilkan semua
 });
 
 // Cara melakukan pengurutan pada array, contohnya pada key "age" yang megurutkan valuenya
-// datas.sort((a, b) => b.age - a.age).map((values) => console.log(values));
+datas.sort((a, b) => b.age - a.age).map((values) => console.log(values));
 
 // Cara melakukan filter dengan spesifik tertentu dengan penggunaan sort, filter dan map untuk mencari data dengan spesifik tertentu, yang mana menggunakan arrow function.
 //Contoh ingin mengurutkan dari tahun paling tua ke muda utk data dengan umur diatas 25 tahun
-// datas
-//   .sort((a, b) => b.age - a.age) //pertama melakukan pengurutan umur dari paling besar ke paling kecil
-//   .filter((x) => x.age > 25) //kondisi filter yang diinginkan
-//   .map((values) => console.log(values)); // menampilkan valuesnya saja dari mapping tersebut
-
-// for (let i = 0; i < datas.length - 1; i++) {
-//   console.log(`Data I : ` + datas[i].nama);
-//   for (let j = 0; j < datas.length - 1 - i; j++) {
-//     console.log(`Data J : ` + datas[j].nama);
-
-// Melakukan perulangan index dalam objek array
-// console.log("index J :" + datas[j].age);
-// console.log("index J +1 :" + datas[j + 1].age);
-// if (datas[j].age < datas[j + 1].age) {
-//   // Tukar posisi
-//   let temp = datas[j];
-//   datas[j] = datas[j + 1];
-//   datas[j + 1] = temp;
-//   }
-// }
+datas
+  .sort((a, b) => b.age - a.age) //pertama melakukan pengurutan umur dari paling besar ke paling kecil
+  .filter((x) => x.age > 25) //kondisi filter yang diinginkan
+  .map((values) => console.log(values)); // menampilkan valuesnya saja dari mapping tersebut
 
 /**
  * Melakukan pengurutan array menggunakan algoritma Bubble Sort.
@@ -293,3 +277,17 @@ for (let i = 0; i < datas2.length - 1; i++) {
     }
   }
 }
+
+// Melakukan Algoritma Bubble sort pada array datas yang berisikan objek agar mengurutkan umur dari besar ke terkecil
+for (let i = 0; i < datas.length - 1; i++) {
+  for (let j = 0; j < datas.length - 1 - i; j++) {
+    if (datas[j].age < datas[j + 1].age) {
+      // Tukar posisi
+      let temp = datas[j];
+      datas[j] = datas[j + 1];
+      datas[j + 1] = temp;
+    }
+  }
+}
+
+console.log(datas);
