@@ -222,16 +222,74 @@ datas.map((values, index) => {
 //   }
 // }
 
+/**
+ * Melakukan pengurutan array menggunakan algoritma Bubble Sort.
+ * Algoritma ini membandingkan elemen bersebelahan dan menukarnya jika urutannya salah.
+ * Proses ini diulang hingga seluruh array terurut sesuai kriteria.
+ *
+ * Pada contoh di bawah, pengurutan dilakukan dari nilai terbesar ke terkecil (descending).
+ *
+ * Langkah-langkah:
+ * 1. Loop luar (i) mengatur berapa kali proses pengurutan dilakukan.
+ * 2. Loop dalam (j) membandingkan elemen ke-j dengan elemen ke-(j+1).
+ * 3. Jika elemen ke-j lebih kecil dari ke-(j+1), maka kedua elemen ditukar.
+ * 4. Setelah satu iterasi loop luar, elemen terbesar akan berada di posisi akhir array yang belum terurut.
+ * 5. Proses diulang hingga seluruh array terurut.
+ *
+ * Kompleksitas waktu: O(n^2) pada kasus terburuk dan rata-rata.
+ *
+ * Contoh penggunaan:
+ * const datas2 = [9, 5, 8, 4, 21, 12, 2, 3, 4, 5];
+ * // Setelah proses bubble sort, datas2 akan terurut dari terbesar ke terkecil.
+ */
 const datas2 = [9, 5, 8, 4, 21, 12, 2, 3, 4, 5];
+/**
+ Kita akan melakukan perulangan bubble sort, ini merupakan perulangan yang uniqe dan memiliki aturan bakunya. pertama kita melakukan perulangan bubble.
 
-for (let index = 0; index < datas2.length; index++) {
-  if (datas2[index] < datas2[index + 1]) {
-    console.log(`true`);
+ Perulangan Bubble yakni menggunakan 2 for, nah 2 for ini memiliki pengkondisian perulangann yaitu -1 dan -1 -(variabel for luar), okey mudahnya perulangan ini seperti ini jika kita melihat dari keyboard kita, lihatlah angka 1-0 pada keyboard dan anggap saja itu sebuah array dengan index 0-10:
 
-    let temp = datas2[index];
-    datas2[index] = datas2[index + 1];
-    datas2[index + 1] = temp;
+ for (let i = 0; i < datas2.length - 1; i++)
+
+ Perulangan luar diatas, dalam variabel i akan mengulang seperti ini dalam keyboard :
+
+ 123456789 -> tidak sampai 0 karena ingat ada panjang .length -1 
+
+ Sekarang perulangan dalam 
+
+ for (let j = 0; j < datas2.length - 1 - i; j++)
+
+ Perulangan dalam diatas, dalam variabel j akan mengulang seperti ini dalam keyboard: note ini juga lebih dimudahkan dnegan kondisi i karena perulangan variabel j berada pada perulangan variabel i beserta dengan kondisi 
+ .length -1 -i :
+
+sesuai angka di keyboard, bukan index
+ i = 1
+ j = 123456789
+
+ i = 2
+ j = 12345678
+
+ i = 3
+ j = 1234567
+
+ dst hingga kondisi i pada angka 9 dan j hanya berulang pada angka 1 saja (istilahnya ketika i semakin ke kanan, j semakin sedikit gerakannya untuk ke kanan)
+ 
+ */
+for (let i = 0; i < datas2.length - 1; i++) {
+  for (let j = 0; j < datas2.length - 1 - i; j++) {
+    /**
+     nah ketika j melakukan perulangan maka akan dilakukan kondisi, dimana jika index datas2 dengan nilai index j lebih kecil < dari index datas2 dengan nilai index j+1 (index +1 disebelahnya) maka akan bernilai true dan melakukan syntax swapping
+     */
+    if (datas2[j] < datas2[j + 1]) {
+      /**
+       ini adalah syntax swapping, yang mana pertama dideklarasikan variabel temp dengan nilai pada index ke j pada array datas2, nilai variabel temp, nantinya akan digunakan untuk mereplace nilai index j+1 pada array datas2
+
+       setelahnya index j pada array datas2 di dirubah nilainya menjadi index j+1 pada array datas2
+
+       terakhir, nilai index j+1 pada array datas2 dirubah nilainya menjadi nilai variabel temp (yang berisi nilai awal index j pada array datas2)
+       */
+      let temp = datas2[j]; // deklarasi variabel untuk penyimpanan nilai awal index j pada array datas2
+      datas2[j] = datas2[j + 1]; // merubah nilai index j menjadi nilai index j+1
+      datas2[j + 1] = temp; // merubah nilai index j+1 menjadi nilai awal j yang disimpan pada nilai variabel temp
+    }
   }
 }
-
-console.log(datas2);
