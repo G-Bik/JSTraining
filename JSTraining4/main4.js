@@ -70,7 +70,7 @@ function restPam(modul1, modul2, ...params) {
 
   // Contoh Loop pada Rest Parameter
   console.log("Modul tambahan:");
-  // looping pada rest parameter yang dimulai pada array ketiga dst ("JavaScript", "React", "Tailwind", "Node.js")
+  // looping dengan forEach pada rest parameter yang dimulai pada array ketiga dst ("JavaScript", "React", "Tailwind", "Node.js")
   params.forEach((modul, index) => {
     console.log(`index ke ${index} dari data ketiga : ${modul}`);
   });
@@ -78,7 +78,15 @@ function restPam(modul1, modul2, ...params) {
 
 restPam("HTML", "CSS", "JavaScript", "React", "Tailwind", "Node.js");
 
-// Penjelasan dasar for each :
-array.forEach((value, index, array) => {
-  // kode yang dijalankan untuk setiap elemen
+/** Penjelasan dasar perulangan for each, yang mana forEach memiliki 3 parameter tetap yakni :
+
+Value: nilai dari data saat ini dalam array
+Index: indeks dari data saat ini
+Array: array dari data asli tempat kita sedang melakukan perulangan
+*/
+let datasss = [1, 2, 3, 4];
+datasss.forEach((value, index, array) => {
+  console.log(value);
+  console.log(index);
+  console.log(array);
 });
