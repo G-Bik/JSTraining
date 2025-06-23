@@ -3,6 +3,12 @@
  for, for of, for in, foreach
  while & do while
  */
+/**
+ LOOP pada java script terbagi menjadi 3 ekspresi yaitu :
+ 1. Ekspresi pertama adalah inisialisasi variabel dan nilai loop awal
+ 2. Ekspresi kedua kondisi seberapa panjang perulagan yang akan dilakukan
+ 3. Ekspresi ketiga adalah inisialisasi perulangan entah itu ++ atau -- yang mana diestiap perulangan akan menambahkan atau mengurangi nilai ekspresi pertama hingga nilai ekspresi pertama tidak lagi memenuhi kondisi perulangan pada ekspresi kedua
+ */
 
 /** Contoh menangkap function dalam array dan mengelolanya secara dynamis dalam iterasi for, contoh dibawah adalah dengan mendeklarasikan variabel data, yang mana value function ada pada index ke-4  */
 
@@ -72,3 +78,114 @@ for (let index = 0; index < data.length; index++) {
 }
 
 // Melakukan optimasi refactor if-else dengan menggunakan map + workrround dan switch-case
+// TOLONG KERJAKAN INI, BISA SETALAH NONTON VIDEO DEA AFRIZAA
+
+// increment loop atau perulangan dengan data bertambah
+for (let ini = 1; ini <= 5; ini++) {
+  console.log(ini);
+}
+
+// decrement loop atau perulangan dengan data berkurang
+for (let decre = 5; decre >= 1; decre--) {
+  console.log("data decre", decre);
+}
+
+// increment loop dengan pemilihan angka genap ganjil
+// Genap
+for (let genap = 1; genap <= 20; genap++) {
+  if (genap % 2 == 0) {
+    console.log("display angka genap", genap);
+  }
+}
+// Ganjil
+for (let genap = 1; genap <= 20; genap++) {
+  if (genap % 2 != 0) {
+    console.log("display angka ganjil", genap);
+  }
+}
+
+// Contoh perulangan WHILE mengambil nilai genap
+let xy = 1;
+while (xy <= 10) {
+  if (xy % 2 == 0) {
+    console.log("contoh loop while genap", xy);
+  }
+  xy++;
+}
+
+// Contoh perulangan WHILE mengambil nilai ganjil
+let ay = 1;
+while (ay <= 10) {
+  if (ay % 2 != 0) {
+    console.log("contoh loop while ganjil", ay);
+  }
+  ay++;
+}
+
+// Contoh perulangan do -While mengambil nilai genap
+let aw = 0;
+do {
+  if (aw % 2 == 0) {
+    console.log("contoh perulangan do-while :", aw);
+  }
+  aw++;
+} while (aw < 10);
+
+// Contoh perulangan do -While mengambil nilai ganjil
+let uy = 0;
+do {
+  if (uy % 2 != 0) {
+    console.log("contoh perulangan do-while :", uy);
+  }
+  uy++;
+} while (uy < 10);
+
+// TUGAS PERULANGAN
+
+const xi = [3, 5, 12];
+let total = 0;
+for (let c = 0; c < xi.length; c++) {
+  console.log((total += xi[c]));
+}
+
+let c = 0;
+while (c < xi.length) {
+  console.log((total += xi[c]));
+  c++;
+}
+
+let total1 = 0;
+let c1 = 0;
+do {
+  console.log((total1 += xi[c1]));
+  c1++;
+} while (c1 < xi.length);
+
+banyakData = [
+  "denpasar",
+  "peguyangan",
+  "udayana",
+  "sudirman",
+  "gatsu",
+  "canggu",
+  "ubud",
+];
+
+// contoh perulangan for of yang mana melakukan output values dari sebuah array atau data
+for (let bData of banyakData) {
+  console.log(bData);
+}
+
+// contoh perulangan for in yang mana melakukan output index dari sebuah array atau data
+for (let aData in banyakData) {
+  console.log(aData);
+}
+// contoh perulangan for each yang mana melakukan output index dan value dari sebuah array atau data
+banyakData.forEach((cData, index) => {
+  console.log(cData, index);
+});
+
+// contoh perulangan for each yang mana melakukan output index dan value dari sebuah array atau data
+banyakData.map((cData, index) => {
+  console.log(cData, index);
+});
