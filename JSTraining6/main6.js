@@ -33,14 +33,17 @@ function tiga() {
 const token = ~~[Math.random() * 12345678]; // tanda ~~ digunakan untuk menghilangkan desimal dan nilai negatif pada nilai random property Math
 
 function login(username) {
-  // melakukan asynchronus ketika fungsi berjalan
-  setTimeout(() => {
-    return { token, username }; // inilah bagian return yang mengembalikan value fungsi menjadi berbentuk object {}, kita bisa juga mengubahnya dalam bentuk array seperti ini [] jika mau.
-  }, 200);
+  // Melakukan asynchronus pada fungsi login dengan property setTimeout(), yang mana menjalankan delay eksekusi pada fungsi dengan memasukkannya kedalam WEB API queue, selama 200 milisecond. Kita bisa lihat juga bahwa dalam property ini, return fungsi baru dilakukan dalam menjalankan asynchronus tersebut.
+  // setTimeout(() => {
+  //   return { token, username };
+  // }, 200);
+  // inilah bagian return yang mengembalikan value fungsi menjadi berbentuk object {}, kita bisa juga mengubahnya dalam bentuk array seperti ini [] jika mau.
+  return { token, username };
 }
-// mendeklarasi variabel user dengan nilai fungsi login dengan parameter username yang diperlukan, nantinya value pada fungsi ini menjadi return yang dilakukan fungsi login() tersebut, yang mana disni nilai dari fungsi login() menjadi object dengan nilai token pada variabel token dan username dari parameter yang dideklarasikan pada nilai variabel login() yaitu "Gustut Biksa"
-const user = login("Gustut Biksa");
+
+// Mendeklarasi variabel user dengan nilai fungsi login dengan parameter username yang diperlukan, nantinya value pada fungsi ini menjadi return yang dilakukan fungsi login() tersebut, yang mana disni nilai dari fungsi login() menjadi object dengan nilai token pada variabel token dan username dari parameter yang dideklarasikan pada nilai variabel login() yaitu "Gustut Biksa"
 //jika console log dilakukan pada user disini, maka nilai user akan berbentuk object dari return fungsi login()
+const user = login("Gustut Biksa");
 console.log(user);
 // kita juga bisa mengambil nilai token saja dari user (user.token), karena value user sudah berupa object, contohnya seperti ini
 console.log("token user adalah", +user.token);
@@ -66,3 +69,15 @@ function getPictures(apiLogin) {
 //
 let apiPictures = getPictures(apiLogin);
 console.log(apiPictures);
+
+// Melakukan fungsi asynchronus setTimeout dan Callback
+const tokenUser = ~~[Math.random() * 100000];
+function userToken(idUser, callback) {
+  setTimeout(() => {
+    callback({ tokenUser, idUser });
+  }, 1000);
+}
+
+const user1 = userToken("Gustut Biksa", function (response) {
+  console.log("data ", response);
+});
